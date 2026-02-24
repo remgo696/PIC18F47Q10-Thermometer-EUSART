@@ -1,14 +1,14 @@
 # ===========================
 # MPLAB X build outputs
 # ===========================
-Fading_LED.X/dist/
-Fading_LED.X/build/
-Fading_LED.X/debug/
+Thermometer-UART.X/dist/
+Thermometer-UART.X/build/
+Thermometer-UART.X/debug/
 
 # ===========================
 # MPLAB X private settings
 # ===========================
-Fading_LED.X/nbproject/private/
+Thermometer-UART.X/nbproject/private/
 
 # ===========================
 # Proteus backups & workspace
