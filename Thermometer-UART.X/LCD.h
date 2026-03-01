@@ -17,9 +17,7 @@
  *  Control: RS(bit0), RW(bit1), E(bit2) en LCD_CTRL_PORT
  *  Datos: D4(bit4), D5(bit5), D6(bit6), D7(bit7) en LCD_DATA_PORT
  *
- *  ⚠ ADVERTENCIA — No usar pines compartidos con el debugger (Curiosity Nano):
- *      • PIC18F47Q10  : RD0 y RD1 están conectados al debugger.
- *      • PIC18F57Q43  : RF0 y RF1 están conectados al debugger.
+ *  ⚠ No usar pines RD0, RD1 (18FQ10) o RF0, RF1 (18FQ43) conectados al debugger.
  *
  *============================================================================*/
 
