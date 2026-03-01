@@ -14,11 +14,8 @@
  *  Modifica LCD_CTRL_PORT y LCD_DATA_PORT para elegir en qué puerto van
  *  los pines de control y los de datos respectivamente.
  *
- *  Pines de control (3 pines del puerto LCD_CTRL_PORT):
- *      bit 0 → RS      bit 1 → RW      bit 2 → E
- *
- *  Pines de datos (4 pines del puerto LCD_DATA_PORT):
- *      bit 4 → D4      bit 5 → D5      bit 6 → D6      bit 7 → D7
+ *  Control: RS(bit0), RW(bit1), E(bit2) en LCD_CTRL_PORT
+ *  Datos: D4(bit4), D5(bit5), D6(bit6), D7(bit7) en LCD_DATA_PORT
  *
  *  ⚠ ADVERTENCIA — No usar pines compartidos con el debugger (Curiosity Nano):
  *      • PIC18F47Q10  : RD0 y RD1 están conectados al debugger.
