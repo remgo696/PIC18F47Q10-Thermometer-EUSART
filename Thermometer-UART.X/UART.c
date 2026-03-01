@@ -23,9 +23,10 @@
 void U1_INIT(UART_Baud_t velocidad){
 #if defined(_18F47Q10)
     // Inicialización EUSART Legacy (Q10)
-    BAUD2CONbits.BRG16 = 0;         
-    SP2BRGH = (velocidad >> 8) & 0xFF; // Bug corregido: ahora sí usa el parámetro
-    SP2BRGL = velocidad & 0xFF;  
+    TX2STAbits.BRGH  = 1;               // Alta velocidad (divisor /16)
+    BAUD2CONbits.BRG16 = 0;             // BRG 8-bit mode
+    SP2BRGH = 0;
+    SP2BRGL = (size_t)velocidad & 0xFF;  
     
     TRISDbits.TRISD0 = 0;
     ANSELDbits.ANSELD0 = 0;
@@ -38,8 +39,8 @@ void U1_INIT(UART_Baud_t velocidad){
 
 #elif defined(_18F57Q43)
     // Inicialización UART Moderno (Q43)
-    U1BRGH = (velocidad >> 8) & 0xFF; 
-    U1BRGL = velocidad & 0xFF;          
+    U1BRGH = ((size_t)velocidad >> 8) & 0xFF; 
+    U1BRGL = (size_t)velocidad & 0xFF;          
     U1CON0 = 0x30;          
     U1CON1 = 0x80;
     U1CON2 = 0x00;
